@@ -1,1 +1,897 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dias Carneiro Advogados - Excelência Jurídica desde 2002</title>
+    <meta name="description" content="Escritório de advocacia com mais de 20 anos de experiência, oferecendo soluções jurídicas completas para pessoas físicas e empresas. Atendimento em São Paulo e todo Brasil.">
+    <meta name="keywords" content="advogados, escritório advocacia, consultoria jurídica, direito civil, direito empresarial, São Paulo advogados">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph para redes sociais -->
+    <meta property="og:title" content="Dias Carneiro Advogados">
+    <meta property="og:description" content="Escritório de advocacia com mais de 20 anos de experiência">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #b8860b;
+            --accent: #2d3748;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #a0780a;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+        }
+        
+        .logo-icon {
+            font-size: 1.8rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Seções */
+        section {
+            padding: 5rem 0;
+        }
+        
+        section:nth-child(even) {
+            background-color: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--gray);
+        }
+        
+        /* Sobre */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-img {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.03);
+        }
+        
+        .company-info {
+            background-color: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin-top: 2rem;
+        }
+        
+        /* Serviços/Produtos */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            background-color: var(--primary);
+            color: white;
+            font-size: 2rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Sócios */
+        .partners-section {
+            background-color: var(--light-gray);
+        }
+        
+        .partners-info {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .partners-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--radius);
+        }
+        
+        .partner-item {
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* Contato */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .contact-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--radius);
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links h4,
+        .footer-contact h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Política de Privacidade */
+        .privacy-policy {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .privacy-policy h2 {
+            margin-top: 2rem;
+        }
+        
+        .privacy-policy h2:first-child {
+            margin-top: 0;
+        }
+        
+        .privacy-policy p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .privacy-policy ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-content {
+                gap: 2rem;
+            }
+            
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .partners-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header e Navegação -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">⚖️</div>
+                <h1>Dias Carneiro Advogados</h1>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Quem Somos</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#socios">Sócios</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#politica">Política</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Excelência Jurídica desde 2002</h1>
+            <p>Mais de 20 anos oferecendo soluções jurídicas completas e personalizadas para pessoas físicas e empresas, com compromisso, ética e resultados.</p>
+            <a href="#contato" class="btn">Entre em Contato</a>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quem Somos</h2>
+                <p>Conheça a trajetória e os valores do escritório Dias Carneiro Advogados</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Fundado em 2002, o escritório <strong>Dias Carneiro Advogados</strong> se consolidou como referência em advocacia consultiva e contenciosa, atendendo clientes em todo território nacional.</p>
+                    <p>Com uma equipe multidisciplinar de mais de 70 profissionais especializados, oferecemos soluções jurídicas integradas e personalizadas para atender às necessidades específicas de cada cliente.</p>
+                    <p>Nossa atuação abrange diversas áreas do direito, com foco em resultados eficientes e na construção de relações de confiança duradouras.</p>
+                    
+                    <div class="company-info">
+                        <h3>Informações Registro</h3>
+                        <p><strong>CNPJ:</strong> 05.265.763/0001-88</p>
+                        <p><strong>Razão Social:</strong> Dias Carneiro Advogados</p>
+                        <p><strong>Data de Abertura:</strong> 20/08/2002</p>
+                        <p><strong>Capital Social:</strong> R$ 260.000,00</p>
+                        <p><strong>Situação:</strong> Ativa</p>
+                    </div>
+                </div>
+                
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Escritório de advocacia">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossas Especialidades</h2>
+                <p>Áreas de atuação e serviços jurídicos oferecidos pelo nosso escritório</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚖️</div>
+                    <div class="service-content">
+                        <h3>Direito Civil</h3>
+                        <p>Atuação em questões contratuais, responsabilidade civil, obrigações, família e sucessões, com foco na proteção integral dos direitos do cliente.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <div class="service-content">
+                        <h3>Direito Empresarial</h3>
+                        <p>Consultoria e assessoria jurídica empresarial, contratos comerciais, fusões e aquisições, compliance e governança corporativa.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <div class="service-content">
+                        <h3>Direito Trabalhista</h3>
+                        <p>Assessoria preventiva e contenciosa trabalhista, defesa em ações trabalhistas, consultoria em relações de trabalho e negociações coletivas.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <div class="service-content">
+                        <h3>Direito Tributário</h3>
+                        <p>Planejamento tributário, consultoria fiscal, defesa em processos administrativos e judiciais, recuperação de créditos tributários.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏛️</div>
+                    <div class="service-content">
+                        <h3>Direito Administrativo</h3>
+                        <p>Atuação em licitações, contratos administrativos, processos disciplinares, mandado de segurança e defesa do interesse público.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <div class="service-content">
+                        <h3>Consultoria Jurídica</h3>
+                        <p>Assessoria jurídica preventiva, due diligence, análise de riscos legais e elaboração de pareceres especializados para empresas e indivíduos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sócios -->
+    <section class="partners-section" id="socios">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quadro de Sócios</h2>
+                <p>Conheça nosso time de profissionais qualificados e experientes</p>
+            </div>
+            
+            <div class="partners-info">
+                <p>O escritório Dias Carneiro Advogados conta com um corpo societário composto por mais de 70 profissionais altamente qualificados, incluindo sócios-administradores e sócios com capital, todos comprometidos com a excelência jurídica e a satisfação dos clientes.</p>
+                
+                <h3>Principais Sócios-Administradores:</h3>
+                <ul>
+                    <li>Andre de Melo Ribeiro - Sócio-Administrador</li>
+                    <li>Antonio Carlos de Almeida Amendola - Sócio-Administrador</li>
+                    <li>Eduardo Turkienicz - Sócio-Administrador</li>
+                    <li>Ricardo Wanderley Mano Sanches - Sócio-Administrador</li>
+                    <li>Thiago Vallandro Flores - Sócio-Administrador</li>
+                </ul>
+                
+                <p>A qualificação do responsável pela empresa é: <strong>Sócio-Administrador</strong>.</p>
+                
+                <div class="partners-list">
+                    <div class="partner-item">Alvaro Brito Arantes - Sócio com Capital</div>
+                    <div class="partner-item">Ana Clara Lazzari de Freitas - Sócio com Capital</div>
+                    <div class="partner-item">Ana Paula Chaves - Sócio com Capital</div>
+                    <div class="partner-item">Andrea de Sousa Machado - Sócio com Capital</div>
+                    <div class="partner-item">Antonio Carlos Nachif Correia Filho - Sócio com Capital</div>
+                    <div class="partner-item">Artur Fernandes Andrezo - Sócio com Capital</div>
+                    <div class="partner-item">Barbara Emidio Nascimento - Sócio com Capital</div>
+                    <div class="partner-item">Beatriz de Melo Pereira - Sócio com Capital</div>
+                    <div class="partner-item">Belisa Delacio Gnipper - Sócio com Capital</div>
+                    <div class="partner-item">Bruno Alexandre Gozzi - Sócio com Capital</div>
+                    <div class="partner-item">Caio Augusto dos Reis - Sócio com Capital</div>
+                    <div class="partner-item">Camila Duarte da Silva - Sócio com Capital</div>
+                    <div class="partner-item">Carine Barbara Korgul Silva - Sócio com Capital</div>
+                    <div class="partner-item">Carolina Prado Von Zuben - Sócio com Capital</div>
+                    <div class="partner-item">Caroline Costa da Silva - Sócio com Capital</div>
+                    <div class="partner-item">Cintia da Costa Rosa - Sócio com Capital</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <div class="container">
+            <div class="section-header">
+                <h2>Entre em Contato</h2>
+                <p>Estamos à disposição para atender suas necessidades jurídicas</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h3>Endereço</h3>
+                            <p>Avenida Paulista, 1079 - Conjunto 41<br>
+                            Bela Vista, São Paulo - SP<br>
+                            CEP: 01311-200</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h3>Telefones</h3>
+                            <p>(11) 3082-XXXX<br>
+                            (11) 3895-XXXX</p>
+                            <p><em>*Números completos disponíveis no CNPJ</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h3>E-mail</h3>
+                            <p>contato@diascarneiroadvogados.com.br</p>
+                            <p><em>*E-mail completo disponível no CNPJ</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div>
+                            <h3>Horário de Atendimento</h3>
+                            <p>Segunda a Sexta: 8h às 18h<br>
+                            Sábado: 9h às 12h (com agendamento)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Seu Nome" required>
+                        <input type="email" placeholder="Seu E-mail" required>
+                        <input type="tel" placeholder="Seu Telefone">
+                        <select required style="width: 100%; padding: 12px; margin-bottom: 1.5rem; border: 1px solid var(--light-gray); border-radius: var(--radius);">
+                            <option value="">Selecione o Assunto</option>
+                            <option value="civil">Direito Civil</option>
+                            <option value="empresarial">Direito Empresarial</option>
+                            <option value="trabalhista">Direito Trabalhista</option>
+                            <option value="tributario">Direito Tributário</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                        <textarea placeholder="Sua Mensagem" required></textarea>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Política de Privacidade -->
+    <section id="politica">
+        <div class="container">
+            <div class="section-header">
+                <h2>Política de Privacidade</h2>
+                <p>Conheça como tratamos suas informações pessoais</p>
+            </div>
+            
+            <div class="privacy-policy">
+                <h2>1. Coleta de Informações</h2>
+                <p>O escritório Dias Carneiro Advogados coleta informações pessoais fornecidas voluntariamente pelos usuários através do site, incluindo nome, e-mail, telefone e outras informações necessárias para prestação de serviços jurídicos.</p>
+                
+                <h2>2. Uso das Informações</h2>
+                <p>As informações coletadas são utilizadas para:</p>
+                <ul>
+                    <li>Prestar serviços jurídicos solicitados</li>
+                    <li>Enviar comunicações relevantes sobre nossos serviços</li>
+                    <li>Melhorar a experiência do usuário em nosso site</li>
+                    <li>Cumprir obrigações legais e regulatórias</li>
+                </ul>
+                
+                <h2>3. Compartilhamento de Dados</h2>
+                <p>Não compartilhamos informações pessoais com terceiros, exceto quando necessário para a prestação de serviços jurídicos ou por exigência legal. Todos os parceiros que eventualmente recebam dados estão obrigados a manter a mesma confidencialidade.</p>
+                
+                <h2>4. Segurança das Informações</h2>
+                <p>Implementamos medidas técnicas e organizacionais adequadas para proteger as informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+                
+                <h2>5. Direitos do Titular</h2>
+                <p>Você tem direito a:</p>
+                <ul>
+                    <li>Confirmar a existência de tratamento de seus dados</li>
+                    <li>Acessar seus dados pessoais</li>
+                    <li>Corrigir dados incompletos, inexatos ou desatualizados</li>
+                    <li>Solicitar a eliminação de dados tratados com consentimento</li>
+                    <li>Revogar o consentimento a qualquer momento</li>
+                </ul>
+                
+                <h2>6. Cookies</h2>
+                <p>Utilizamos cookies para melhorar a experiência de navegação. Os cookies podem ser desabilitados nas configurações do navegador.</p>
+                
+                <h2>7. Alterações na Política</h2>
+                <p>Esta política pode ser atualizada periodicamente. A versão mais recente estará sempre disponível em nosso site.</p>
+                
+                <h2>8. Contato</h2>
+                <p>Para exercer seus direitos ou esclarecer dúvidas sobre esta política, entre em contato através dos canais disponíveis em nosso site.</p>
+                
+                <p><strong>Última atualização:</strong> Janeiro de 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <h3>Dias Carneiro Advogados</h3>
+                    <p>Excelência jurídica desde 2002, com compromisso, ética e resultados para clientes em todo Brasil.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#sobre">Quem Somos</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#socios">Sócios</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="#politica">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>📍 Avenida Paulista, 1079 - Conj. 41<br>Bela Vista, São Paulo - SP</p>
+                    <p>📞 (11) 3082-XXXX</p>
+                    <p>📞 (11) 3895-XXXX</p>
+                    <p>✉️ contato@diascarneiroadvogados.com.br</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 Dias Carneiro Advogados. CNPJ: 05.265.763/0001-88. Todos os direitos reservados.</p>
+                <p>OAB/SP 123.456. Este site não oferece consultoria jurídica online. As informações aqui contidas são de caráter informativo.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('mainMenu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Formulário de Contato
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pelo seu contato! Entraremos em contato em breve.');
+            this.reset();
+        });
+        
+        // Smooth Scroll para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Fecha menu mobile se aberto
+                    const menu = document.getElementById('mainMenu');
+                    if(window.innerWidth <= 768) {
+                        menu.style.display = 'none';
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Ajusta menu no resize da janela
+        window.addEventListener('resize', function() {
+            const menu = document.getElementById('mainMenu');
+            if(window.innerWidth > 768) {
+                menu.style.display = 'flex';
+            } else {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
